@@ -69,7 +69,7 @@ const App = () => {
         'Engineered scalable video API with Express.js and MongoDB, processing 1000-second videos',
         'Fine-tuned MongoDB queries, cutting storage time by 40%',
       ],
-      link: 'https://github.com/Avin-saxena/Video-WebApp',
+      link: 'https://github.com/Avin-saxena/VideoApp',
     },
     {
       title: 'Laundry Management System',
@@ -80,7 +80,7 @@ const App = () => {
         'Secured API access for 50+ users with JWT authentication',
         'Achieved 98% unit test coverage using Postman and Jest',
       ],
-      link: 'https://github.com/Avin-saxena/Laundry-Management-System',
+      link: 'https://github.com/Avin-saxena/laundry-management-system',
     },
     {
       title: 'House Price Prediction',
@@ -90,7 +90,7 @@ const App = () => {
         'Performed feature extraction and trend analysis improving prediction accuracy by 20%',
         'Validated model performance and prevented overfitting via cross-validation techniques',
       ],
-      link: 'https://github.com/Avin-saxena/House-Price-Prediction',
+      link: 'https://github.com/Avin-saxena/house_price_prediction',
     },
   ];
 
