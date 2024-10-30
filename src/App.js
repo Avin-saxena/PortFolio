@@ -57,10 +57,9 @@ const App = () => {
       title: 'Inquire PDF',
       tech: 'React.js, FastAPI, Hugging Face, SQLite',
       description: [
-        'Developed a dynamic PDF inquiry system using React.js for the frontend interface',
-        'Implemented backend APIs with Express.js to handle PDF data processing and retrieval',
-        'Integrated PDF.js to enable in-browser PDF rendering and searching capabilities',
-        'Optimized performance to handle large PDF files efficiently, reducing load times by 25%',
+        'Built a full-stack platform with React.js frontend and FastAPI backend, enabling PDF uploads and managing real-time Q&A responses with <1-second latency using a fine-tuned T5 large language model (LLM).',
+        'Constructed semantic search with FAISS and sentence embeddings, ensuring 35% faster retrieval times for relevant sections across large documents.',
+        'Optimized backend with SQLite to handle 1000+ queries, established real-time error tracking, and deployed with Uvicorn to support concurrent sessions without degradation.',
       ],
       link: 'https://github.com/Avin-saxena/inquire-pdf',
     },
