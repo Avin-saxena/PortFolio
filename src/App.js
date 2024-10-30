@@ -61,6 +61,7 @@ const App = () => {
 
   const projects = [
     {
+<<<<<<< HEAD
       title: 'Video WebApp',
       tech: 'React.js, Express.js, MongoDB, JWT',
       description: [
@@ -68,6 +69,26 @@ const App = () => {
         'Deployed JWT-based authentication in Express.js, increasing access control efficiency by 30%',
         'Engineered scalable video API with Express.js and MongoDB, processing 1000-second videos',
         'Fine-tuned MongoDB queries, cutting storage time by 40%',
+=======
+      title: 'Inquire PDF',
+      tech: 'React.js, FastAPI, Python, Hugging Face, SQLite',
+      description: [
+        'Built a full-stack platform with React.js frontend and FastAPI backend, enabling PDF uploads and real-time Q&A.',
+        'Implemented semantic search with FAISS, reducing retrieval times by 35%.',
+        'Optimized backend with SQLite to handle 1,000+ queries and concurrent sessions efficiently.',
+        'Executed automated test scripts and incorporated detailed logging, achieving 98% test coverage and enabling real-time error tracking for faster issue resolution.'
+      ],
+      link: 'https://github.com/Avin-saxena/PDFChat',
+    },
+    {
+      title: 'Video WebApp',
+      tech: 'React.js, Express.js, MongoDB, JWT',
+      description: [
+        'Architected a responsive dashboard using React.js, enhancing UI/UX across platforms.',
+        'Deployed JWT-based authentication in Express.js, increasing access control efficiency by 30%.',
+        'Engineered scalable video API with Express.js and MongoDB, processing 1000-second videos.',
+        'Fine-tuned MongoDB queries, cutting storage time by 40%.',
+>>>>>>> master
       ],
       link: 'https://github.com/Avin-saxena/VideoApp',
     },
@@ -75,6 +96,7 @@ const App = () => {
       title: 'Laundry Management System',
       tech: 'Express.js, HTML, CSS, MySQL',
       description: [
+<<<<<<< HEAD
         'Built RESTful API endpoints handling 1000+ requests/second for laundry operations',
         'Managed employee, customer, and inventory data with CRUD operations in MySQL',
         'Secured API access for 50+ users with JWT authentication',
@@ -93,6 +115,18 @@ const App = () => {
       link: 'https://github.com/Avin-saxena/house_price_prediction',
     },
   ];
+=======
+        'Built RESTful API endpoints handling 1,000+ requests per second for laundry operations.',
+        'Managed employee, customer, and inventory data with CRUD operations in MySQL.',
+        'Secured API access for 50+ users with JWT authentication.',
+        'Achieved 98% unit test coverage using Postman and Jest.',
+      ],
+      link: 'https://github.com/Avin-saxena/laundry-management-system',
+    },
+    
+  ];
+  
+>>>>>>> master
 
   return (
     <div className="min-h-screen bg-black bg-pattern text-gray-200 font-sans">
