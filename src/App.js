@@ -61,7 +61,7 @@ const App = () => {
         'Constructed semantic search with FAISS and sentence embeddings, ensuring 35% faster retrieval times for relevant sections across large documents.',
         'Optimized backend with SQLite to handle 1000+ queries, established real-time error tracking, and deployed with Uvicorn to support concurrent sessions without degradation.',
       ],
-      link: 'https://github.com/Avin-saxena/inquire-pdf',
+      link: 'https://github.com/Avin-saxena/PDFChat',
     },
     {
       title: 'Video WebApp',
