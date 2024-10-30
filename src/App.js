@@ -1,13 +1,9 @@
-
-
 import React from 'react';
-import { Github, Linkedin, Mail, ExternalLink, Download } from 'lucide-react';
+import { Github, Linkedin, Mail, ExternalLink, Download, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
-import profileImage from './assets/Avin..png'; // Ensure you have this image
-import heroImage from './assets/icon.webp'; // Replace with your image file
-// import resumePDF from './assets/resume.pdf';
+import profileImage from './assets/Avin..png'; // Corrected file name
+import heroImage from './assets/icon.webp';
 
-// Updated icon imports
 import {
   DiReact,
   DiNodejsSmall,
@@ -18,10 +14,7 @@ import {
 } from 'react-icons/di';
 import { SiNextdotjs, SiExpress, SiTensorflow } from 'react-icons/si';
 
-// Import the TechnologyCard component
 import TechnologyCard from './components/TechnologyCard';
-
-
 
 const App = () => {
   const technologies = [
@@ -61,6 +54,17 @@ const App = () => {
 
   const projects = [
     {
+      title: 'Inquire PDF',
+      tech: 'React.js, FastAPI, Hugging Face, SQLite',
+      description: [
+        'Developed a dynamic PDF inquiry system using React.js for the frontend interface',
+        'Implemented backend APIs with Express.js to handle PDF data processing and retrieval',
+        'Integrated PDF.js to enable in-browser PDF rendering and searching capabilities',
+        'Optimized performance to handle large PDF files efficiently, reducing load times by 25%',
+      ],
+      link: 'https://github.com/Avin-saxena/inquire-pdf',
+    },
+    {
       title: 'Video WebApp',
       tech: 'React.js, Express.js, MongoDB, JWT',
       description: [
@@ -82,42 +86,77 @@ const App = () => {
       ],
       link: 'https://github.com/Avin-saxena/laundry-management-system',
     },
-    {
-      title: 'House Price Prediction',
-      tech: 'Python, Keras, NumPy, Seaborn',
-      description: [
-        'Constructed advanced outlier detection using Python and NumPy, improving accuracy by 10%',
-        'Performed feature extraction and trend analysis improving prediction accuracy by 20%',
-        'Validated model performance and prevented overfitting via cross-validation techniques',
-      ],
-      link: 'https://github.com/Avin-saxena/house_price_prediction',
-    },
+    // Replaced "House Price Prediction" with "Inquire PDF"
+    
   ];
 
   return (
-    <div className="min-h-screen bg-black bg-pattern text-gray-200 font-sans">
-      {/* Header */}
-      <header className="fixed top-0 w-full bg-black/70 backdrop-blur-md z-50 shadow-custom-dark">
+    <div className="min-h-screen text-gray-200 font-sans relative overflow-hidden">
+      {/* Animated gradient background */}
+      <div className="fixed inset-0 bg-black pointer-events-none">
+        {/* Animated gradient overlay */}
+        <div 
+          className="absolute inset-0 opacity-30"
+          style={{
+            backgroundImage: `
+              radial-gradient(circle at 50% 50%, rgba(128, 0, 128, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 0% 0%, rgba(0, 0, 255, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 100% 100%, rgba(255, 0, 128, 0.1) 0%, transparent 50%)
+            `,
+            animation: 'gradient-rotation 20s linear infinite',
+          }}
+        />
+        
+        {/* Grid pattern */}
+        <div 
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px)
+            `,
+            backgroundSize: '60px 60px'
+          }}
+        />
+
+        {/* Floating particles effect */}
+        <div className="absolute inset-0">
+          {Array.from({ length: 10 }).map((_, i) => (
+            <div
+              key={i}
+              className="absolute rounded-full bg-white/10"
+              style={{
+                width: Math.random() * 4 + 1 + 'px',
+                height: Math.random() * 4 + 1 + 'px',
+                left: Math.random() * 100 + '%',
+                top: Math.random() * 100 + '%',
+                animation: `float-${i} ${Math.random() * 10 + 10}s linear infinite`,
+              }}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Header with glass morphism */}
+      <header className="fixed top-0 w-full bg-black/40 backdrop-blur-md z-50 border-b border-white/10">
         <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-          {/* Left Side: Profile Picture and AS */}
           <div className="flex items-center space-x-2">
             <motion.img
               src={profileImage}
               alt="Avin Saxena"
-              className="w-10 h-10 rounded-full"
+              className="w-10 h-10 rounded-full ring-2 ring-purple-500/20"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
             />
-            <h1 className="text-2xl font-bold tracking-wider">AS</h1>
+            <h1 className="text-2xl font-bold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">AS</h1>
           </div>
-          {/* Right Side: Social Icons */}
           <div className="flex space-x-4">
             <a
               href="https://github.com/Avin-saxena"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-pink-500 transition-colors"
+              className="text-gray-400 hover:text-pink-500 transition-all duration-300 transform hover:scale-110"
               aria-label="GitHub"
             >
               <Github size={24} />
@@ -126,14 +165,14 @@ const App = () => {
               href="https://www.linkedin.com/in/avin-saxena-384616237/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-pink-500 transition-colors"
+              className="text-gray-400 hover:text-pink-500 transition-all duration-300 transform hover:scale-110"
               aria-label="LinkedIn"
             >
               <Linkedin size={24} />
             </a>
             <a
               href="mailto:avin12121111@gmail.com"
-              className="text-gray-400 hover:text-pink-500 transition-colors"
+              className="text-gray-400 hover:text-pink-500 transition-all duration-300 transform hover:scale-110"
               aria-label="Email"
             >
               <Mail size={24} />
@@ -142,73 +181,88 @@ const App = () => {
         </div>
       </header>
 
-      {/* Main Content */}
-      <main className="pt-20 max-w-6xl mx-auto px-4">
-        {/* Hero Section */}
-        <section className="min-h-screen flex flex-col justify-center">
+      <main className="relative z-10 pt-20 max-w-6xl mx-auto px-4">
+        {/* Hero Section with enhanced styling */}
+        <section className="min-h-screen flex flex-col justify-center relative">
+          <div className="absolute -top-20 -left-20 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-pink-500/20 rounded-full blur-3xl animate-pulse" />
+          
           <motion.div
             className="flex flex-col md:flex-row items-start gap-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            {/* Text Content */}
+            {/* Removed the box around the name by adjusting the container */}
             <div className="md:w-1/2 mt-4 ml-4">
-              <h1 className="text-5xl md:text-6xl font-bold mb-6">
+              <motion.h1
+                className="text-5xl md:text-6xl font-serif font-semibold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
                 Avin Saxena
-              </h1>
+              </motion.h1>
               <div className="flex items-center gap-2 mb-6">
                 <h2 className="text-2xl md:text-3xl bg-gradient-to-r from-purple-400 to-purple-600 text-transparent bg-clip-text font-semibold font-serif">
-                  Final year CSE@IIIT Vadodara
+                  IIIT Vadodara, Final year CSE
                 </h2>
-                <span className="text-2xl">🎓</span>
+                <span className="text-2xl animate-bounce">🎓</span>
               </div>
-              <p className="text-gray-400 leading-relaxed mb-8">
-                Computer Science student at IIIT Vadodara ICD with expertise in
+              <motion.p
+                className="text-gray-400 leading-relaxed mb-8"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+              >
+                Computer Science student at Indian Institute of Information Technology Vadodara ICD with expertise in
                 full-stack development. Proficient in React.js, Express.js, and
                 machine learning technologies. Passionate about creating
                 efficient solutions and delivering exceptional user experiences.
-              </p>
+              </motion.p>
               {/* Resume Download Button */}
               <motion.a
-  href="/Avin_Saxena_Resume.pdf"  // Updated path to match your file name
-  download="Avin_Saxena_Resume.pdf"
-  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg 
-            shadow-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 
-            transform hover:scale-105 active:scale-95"
-  whileHover={{ scale: 1.05 }}
-  whileTap={{ scale: 0.95 }}
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ delay: 0.5 }}
->
-  <Download className="w-5 h-5 mr-2" />
-  <span className="font-medium">Download Resume</span>
-</motion.a>
+                href="/Avin_Saxena_Resume.pdf" // Ensure the PDF is in the public folder
+                download="Avin_Saxena_Resume.pdf"
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg 
+                          shadow-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 
+                          transform hover:scale-105 active:scale-95 hover:shadow-pink-500/25 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                aria-label="Download Resume"
+              >
+                <Download className="w-5 h-5 mr-2" />
+                <span className="font-medium">Download Resume</span>
+              </motion.a>
             </div>
-            {/* Enlarged Image on the Right */}
             <div className="md:w-1/2 flex justify-center">
               <motion.img
                 src={heroImage}
                 alt="Avin Saxena"
-                className="w-96 h-96 md:w-96 md:h-96 rounded-lg shadow-2xl object-cover"
+                className="w-96 h-96 md:w-96 md:h-96 rounded-lg shadow-2xl object-cover ring-4 ring-purple-500/20 hover:ring-pink-500/20 transition-all duration-300"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
+                loading="lazy"
               />
             </div>
           </motion.div>
         </section>
-        {/* Technologies Section */}
+
+        {/* Technologies Section with enhanced cards */}
         <motion.section
-          className="py-20"
+          className="py-20 relative"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl font-bold mb-12 text-center">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-transparent" />
+          <h2 className="text-3xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
             Technologies
           </h2>
           <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-9 gap-6">
@@ -224,30 +278,32 @@ const App = () => {
           </div>
         </motion.section>
 
-        {/* Experience Section */}
+        {/* Experience Section with enhanced timeline */}
         <motion.section
-          className="py-20"
+          className="py-20 relative"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl font-bold mb-12 text-center">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-pink-900/10 to-transparent" />
+          <h2 className="text-3xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
             Experience
           </h2>
           <div className="space-y-12">
             {experience.map((exp, index) => (
               <motion.div
                 key={index}
-                className="border-l-4 border-pink-500 pl-8 relative"
+                className="border-l-4 border-pink-500 pl-8 relative p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-lg hover:shadow-pink-500/10 transition-all duration-300"
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, amount: 0.3 }}
                 transition={{ delay: index * 0.2, duration: 0.5 }}
               >
-                <div className="absolute -left-2 top-0 w-4 h-4 bg-pink-500 rounded-full"></div>
+                <div className="absolute -left-2 top-0 w-4 h-4
+                bg-pink-500 rounded-full shadow-lg shadow-pink-500/50"></div>
                 <p className="text-gray-400 mb-2">{exp.period}</p>
-                <h3 className="text-2xl font-semibold mb-1">{exp.role}</h3>
+                <h3 className="text-2xl font-semibold mb-1 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">{exp.role}</h3>
                 <p className="text-gray-400 mb-4">{exp.company}</p>
                 <ul className="space-y-3">
                   {exp.achievements.map((achievement, i) => (
@@ -265,8 +321,9 @@ const App = () => {
                       <ExternalLink
                         size={16}
                         className="mt-1 flex-shrink-0 text-pink-500"
+                        aria-hidden="true"
                       />
-                      <span>{achievement}</span>
+                      <span className="hover:text-gray-300 transition-colors duration-300">{achievement}</span>
                     </motion.li>
                   ))}
                 </ul>
@@ -275,34 +332,37 @@ const App = () => {
           </div>
         </motion.section>
 
-        {/* Projects Section */}
+        {/* Projects Section with enhanced cards */}
         <motion.section
-          className="py-20"
+          className="py-20 relative"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl font-bold mb-12 text-center">Projects</h2>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-transparent" />
+          <h2 className="text-3xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
+            Projects
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <motion.div
                 key={index}
-                className="bg-gray-900/50 rounded-lg p-6 border border-gray-800 hover:bg-gray-800 transition-colors"
+                className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/10 group"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.3 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 whileHover={{ y: -5 }}
               >
-                <h3 className="text-xl font-semibold mb-2 flex items-center justify-between">
+                <h3 className="text-xl font-semibold mb-2 flex items-center justify-between bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
                   {project.title}
                   {project.link && (
                     <a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-pink-500 hover:text-pink-400 transition-colors"
+                      className="text-pink-500 hover:text-pink-400 transition-colors transform hover:scale-110 duration-300"
                       aria-label={`View ${project.title}`}
                     >
                       <ExternalLink size={20} />
@@ -314,11 +374,12 @@ const App = () => {
                   {project.description.map((item, i) => (
                     <li
                       key={i}
-                      className="flex items-start gap-2 text-gray-400 text-sm"
+                      className="flex items-start gap-2 text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-300"
                     >
                       <ExternalLink
                         size={14}
                         className="mt-1 flex-shrink-0 text-pink-500"
+                        aria-hidden="true"
                       />
                       <span>{item}</span>
                     </li>
@@ -329,34 +390,47 @@ const App = () => {
           </div>
         </motion.section>
 
-        {/* Contact Section */}
+        {/* Contact Section with enhanced buttons */}
         <motion.section
-          className="py-20"
+          className="py-20 relative"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.5 }}
         >
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-pink-900/10 to-transparent" />
           <div className="text-center">
-            <h2 className="text-3xl font-bold mb-8">Get In Touch</h2>
+            <h2 className="text-3xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
+              Get In Touch
+            </h2>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <motion.a
-                href="mailto:avin12121111@gmail.com"
-                className="bg-pink-500 text-white px-8 py-3 rounded-lg hover:bg-pink-600 transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ duration: 0.3 }}
-              >
-                Email Me
-              </motion.a>
+             {/* Phone Number Button */}
+      <motion.a
+        href="tel:+919327109849"
+        className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg 
+                  shadow-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 
+                  transform hover:scale-105 active:scale-95 hover:shadow-pink-500/25 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        transition={{ duration: 0.3 }}
+        aria-label="Call +91-9327109849"
+      >
+        <Phone className="w-5 h-5 mr-2" />
+        <span className="font-medium">+91-9327109849</span>
+      </motion.a>
+
+              {/* Connect on LinkedIn Button */}
               <motion.a
                 href="https://www.linkedin.com/in/avin-saxena-384616237/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-800 text-white px-8 py-3 rounded-lg hover:bg-gray-700 transition-colors"
+                className="bg-white/10 backdrop-blur-sm text-white px-8 py-3 rounded-lg 
+                          hover:bg-white/20 transition-all duration-300 shadow-lg border border-white/10
+                          hover:shadow-purple-500/25 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ duration: 0.3 }}
+                aria-label="Connect on LinkedIn"
               >
                 Connect on LinkedIn
               </motion.a>
@@ -365,20 +439,45 @@ const App = () => {
         </motion.section>
       </main>
 
-        {/* Footer */}
-        <footer className="bg-black/80 backdrop-blur-md py-6">
+      {/* Enhanced Footer */}
+      <footer className="relative z-10 bg-black/40 backdrop-blur-md py-6 border-t border-white/10">
         <div className="max-w-6xl mx-auto px-4 text-center text-gray-400">
           <p>
             Contact:{" "}
             <a
               href="mailto:avin12121111@gmail.com"
-              className="underline hover:text-pink-500 transition-colors"
+              className="underline hover:text-pink-500 transition-colors duration-300"
             >
               avin12121111@gmail.com
             </a>
           </p>
         </div>
       </footer>
+
+      {/* Global animations */}
+      <style jsx global>{`
+        @keyframes gradient-rotation {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        
+        ${Array.from({ length: 10 }).map((_, i) => `
+          @keyframes float-${i} {
+            0%, 100% {
+              transform: translate(0, 0);
+            }
+            25% {
+              transform: translate(${Math.random() * 50 - 25}px, ${Math.random() * 50 - 25}px);
+            }
+            50% {
+              transform: translate(${Math.random() * 50 - 25}px, ${Math.random() * 50 - 25}px);
+            }
+            75% {
+              transform: translate(${Math.random() * 50 - 25}px, ${Math.random() * 50 - 25}px);
+            }
+          }
+        `).join('\n')}
+      `}</style>
     </div>
   );
 };
