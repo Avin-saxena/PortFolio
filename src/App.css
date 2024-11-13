@@ -1,0 +1,94 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom global styles */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+a {
+  transition: color 0.3s ease;
+}
+
+button,
+a {
+  transition: transform 0.2s ease;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Tooltip styling */
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(75, 85, 99, 0.9);
+  color: #f3f4f6;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+[data-tooltip]::after {
+  content: '';
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+
+  @keyframes slideRight {
+    from { transform: translateX(0); }
+    to { transform: translateX(200%); }
+  }
+
+  @keyframes slideDown {
+    from { transform: translateY(0); }
+    to { transform: translateY(200%); }
+  }
+
+  @keyframes slideLeft {
+    from { transform: translateX(0); }
+    to { transform: translateX(-200%); }
+  }
+
+  @keyframes slideUp {
+    from { transform: translateY(0); }
+    to { transform: translateY(-200%); }
+  }
+
+  .animate-slide-right {
+    animation: slideRight 2s linear infinite;
+  }
+
+  .animate-slide-down {
+    animation: slideDown 2s linear infinite;
+  }
+
+  .animate-slide-left {
+    animation: slideLeft 2s linear infinite;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 2s linear infinite;
+  }
+
+
+
+
+
+  
