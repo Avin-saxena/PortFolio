@@ -138,7 +138,7 @@ const App = () => {
 
       {/* Header with glass morphism */}
       <header className="fixed top-0 w-full bg-black/40 backdrop-blur-md z-50 border-b border-white/10">
-  <div className="pl-16 py-4 flex justify-between items-center"> {/* Removed max-w-6xl mx-auto and changed px-4 to pl-4 */}
+  <div className="px-4 md:px-16 py-4 flex justify-between items-center"> {/* Removed max-w-6xl mx-auto and changed px-4 to pl-4 */}
     <div className="flex items-center space-x-2">
       <motion.img
         src={profileImage}
@@ -150,7 +150,7 @@ const App = () => {
       />
       <h1 className="text-2xl font-bold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">AS</h1> {/* Kept original size */}
     </div>
-    <div className="flex space-x-4 pr-24"> {/* Added pr-4 for right padding */}
+    <div className="flex space-x-4 pr-4 md:pr-24"> {/* Added pr-4 for right padding */}
       <a
         href="https://github.com/Avin-saxena"
         target="_blank"
@@ -182,19 +182,19 @@ const App = () => {
 
       <main className="relative z-10 pt-20 max-w-6xl mx-auto px-4">
         {/* Hero Section with enhanced styling */}
-        <section className="min-h-screen flex flex-col justify-center relative">
+        <section className="min-h-screen flex flex-col justify-center relative pt-20">
           <div className="absolute -top-20 -left-20 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl animate-pulse" />
           <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-pink-500/20 rounded-full blur-3xl animate-pulse" />
           
           <motion.div
-            className="flex flex-col md:flex-row items-start gap-12"
+            className="flex flex-col md:flex-row items-center md:items-start gap-24"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
             {/* Removed the box around the name by adjusting the container */}
             <motion.div
-  className="md:w-1/2 -mt-20 -ml-20"
+  className="md:w-1/2 mt-4 md:-mt-20 ml-0 md:-ml-20"
   initial={{ opacity: 0, y: -20 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.6 }}
@@ -299,8 +299,9 @@ const App = () => {
     <span className="font-medium">Download Resume</span>
   </motion.a>
 </motion.div>
-<div className="md:w-1/2 flex justify-start items-center -mt-20"> {/* Added -mt-32 to move up */}
-    <div className="relative ml-40 transform hover:scale-105 transition-transform duration-300">
+<div className="w-full md:w-1/2 flex justify-center md:justify-end items-center mt-8 md:-mt-20"> {/* Added -mt-32 to move up */}
+    <div className="relative w-full max-w-md h-auto rounded-lg shadow-2xl object-cover 
+             filter brightness-105 hover:brightness-110 transition-all duration-300">
       {/* Border container */}
       <div className="absolute -inset-[1px] rounded-lg overflow-hidden">
         <div className="absolute top-0 left-[-100%] h-[2px] w-full bg-gradient-to-r from-transparent via-purple-500 to-transparent animate-slide-right"/>
@@ -313,8 +314,9 @@ const App = () => {
       <img
         src={heroImage}
         alt="Avin Saxena"
-        className="relative w-100 h-100 md:w-100 md:h-100 rounded-lg shadow-2xl object-cover 
-                   filter brightness-105 hover:brightness-110 transition-all duration-300"
+        className="relative w-[80vw] md:w-100 max-w-md h-auto rounded-lg shadow-2xl object-cover 
+             filter brightness-105 hover:brightness-110 transition-all duration-300 
+             ml-auto mr-4 md:mr-14"
         loading="lazy"
       />
       
@@ -479,15 +481,15 @@ const App = () => {
              {/* Phone Number Button */}
       <motion.a
         href="tel:+919327109849"
-        className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg 
-                  shadow-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 
-                  transform hover:scale-105 active:scale-95 hover:shadow-pink-500/25 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50"
+        className="inline-flex items-center px-4 sm:px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 
+             text-white rounded-lg shadow-lg hover:from-purple-600 hover:to-pink-600 
+             transition-all duration-300 text-sm sm:text-base"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         transition={{ duration: 0.3 }}
         aria-label="Call +91-9327109849"
       >
-        <Phone className="w-5 h-5 mr-2" />
+        <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
         <span className="font-medium">+91-9327109849</span>
       </motion.a>
 
