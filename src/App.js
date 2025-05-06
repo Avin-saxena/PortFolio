@@ -29,65 +29,71 @@ const App = () => {
     { name: 'Docker', icon: <DiDocker />, color: 'text-[#2496ED]' },
   ];
 
-  const experience = [
-    {
-      period: 'Jun 2024 - Aug 2024',
-      role: 'Software Engineer Intern',
-      company: 'Pratinik Infotech Pvt. Limited',
-      achievements: [
-        'Developed ML model for metal casting defect detection with 99.58% accuracy using CNNs (VGG16, ResNet50)',
-        'Optimized training processes by integrating SGD and Adam optimizers, reducing model convergence time by 15%',
-        'Applied data augmentation techniques to address class imbalance, improving model robustness by 20%',
-      ],
-    },
-    {
-      period: 'Jun 2023 - Dec 2023',
-      role: 'Web Developer Intern',
-      company: 'IndusFly',
-      achievements: [
-        'Designed and implemented backend architecture for flight reservation system using Express.js, maximizing data processing, reducing response time by 30%',
-        'Implemented JWT-based authentication to enhance user security, resulting in a 25% reduction in unauthorized access incidents',
-        'Built responsive UI with React.js, automating PDF invoice generation after payments for enhanced user experience',
-      ],
-    },
-  ];
+const experience = [
+  {
+    period: 'Nov 2024 – Present',
+    role: 'Full Stack Developer',
+    company: 'TunableLabs LLC, USA (Remote)',
+    achievements: [
+      'Implemented multi-agent contract automation using agentic workflows for legal drafting, review, and regeneration',
+      'Developed and deployed LLM observability platform (TuneTrace) with OpenTelemetry and Railway, improving traceability by 40%',
+      'Engineered Legal-AI RAG pipeline using S3, LlamaParse, OpenAI embeddings, Weaviate, and Supabase/PostgreSQL',
+      'Built collaborative document editor with Next.js and Quill.js, enabling real-time legal collaboration and reducing contract review time by 35%',
+    ],
+  },
+  {
+    period: 'Jun 2024 – Aug 2024',
+    role: 'Software Engineer Intern',
+    company: 'Pratinik Infotech Pvt. Limited',
+    achievements: [
+      'Developed CNN model for metal casting defect detection using VGG16 and ResNet50',
+      'Reduced model convergence time by 15% by integrating SGD and Adam optimizers',
+      'Improved model accuracy by 20% via data augmentation addressing class imbalance',
+    ],
+  },
+  {
+    period: 'Jun 2023 – Dec 2023',
+    role: 'Web Developer Intern',
+    company: 'IndusFly',
+    achievements: [
+      'Designed full-stack flight reservation system with Express.js and React.js, improving data throughput by 30%',
+      'Secured user authentication with JWT, reducing unauthorized access by 25%',
+    ],
+  },
+];
 
   const projects = [
-    {
-      title: 'Inquire PDF',
-      tech: 'React.js, FastAPI, Hugging Face, SQLite',
-      description: [
-        'Built a full-stack platform with React.js frontend and FastAPI backend, enabling PDF uploads and managing real-time Q&A responses with <1-second latency using a fine-tuned T5 large language model (LLM).',
-        'Constructed semantic search with FAISS and sentence embeddings, ensuring 35% faster retrieval times for relevant sections across large documents.',
-        'Optimized backend with SQLite to handle 1000+ queries, established real-time error tracking, and deployed with Uvicorn to support concurrent sessions without degradation.',
-      ],
-      link: 'https://github.com/Avin-saxena/PDFChat',
-    },
-    {
-      title: 'Video WebApp',
-      tech: 'React.js, Express.js, MongoDB, JWT',
-      description: [
-        'Architected a responsive dashboard using React.js, enhancing UI/UX across platforms',
-        'Deployed JWT-based authentication in Express.js, increasing access control efficiency by 30%',
-        'Engineered scalable video API with Express.js and MongoDB, processing 1000-second videos',
-        'Fine-tuned MongoDB queries, cutting storage time by 40%',
-      ],
-      link: 'https://github.com/Avin-saxena/VideoApp',
-    },
-    {
-      title: 'Laundry Management System',
-      tech: 'Express.js, HTML, CSS, MySQL',
-      description: [
-        'Built RESTful API endpoints handling 1000+ requests/second for laundry operations',
-        'Managed employee, customer, and inventory data with CRUD operations in MySQL',
-        'Secured API access for 50+ users with JWT authentication',
-        'Achieved 98% unit test coverage using Postman and Jest',
-      ],
-      link: 'https://github.com/Avin-saxena/laundry-management-system',
-    },
-    // Replaced "House Price Prediction" with "Inquire PDF"
-    
-  ];
+  {
+    title: 'CodeInsight AI',
+    tech: 'Next.js, FastAPI, Mermaid, GPT-4',
+    description: [
+      'Built full-stack Python code analysis platform with AST parsing and Mermaid diagrams',
+      'Integrated GPT-4 for natural language Q&A over code, enhancing debugging and understanding',
+      'Delivered real-time feedback via FastAPI and React.js, improving user task speed by 30%',
+    ],
+    link: 'https://github.com/Avin-saxena/Tunable_labs_assessment',
+  },
+  {
+    title: 'Inquire PDF',
+    tech: 'React.js, FastAPI, Hugging Face, FAISS, SQLite',
+    description: [
+      'Built full-stack PDF Q&A platform using fine-tuned T5 LLM with <1s latency',
+      'Implemented semantic search with FAISS, improving retrieval speed by 35%',
+      'Handled 1000+ concurrent queries via SQLite and Uvicorn backend',
+    ],
+    link: 'https://github.com/Avin-saxena/PDFChat',
+  },
+  {
+    title: 'Video WebApp',
+    tech: 'React.js, Express.js, MongoDB, JWT',
+    description: [
+      'Designed responsive dashboard with React.js and JWT-authenticated backend',
+      'Optimized MongoDB queries, reducing storage time by 40%',
+    ],
+    link: 'https://github.com/Avin-saxena/VideoApp',
+  },
+];
+
 
   return (
     <div className="min-h-screen text-gray-200 font-sans relative overflow-hidden">
